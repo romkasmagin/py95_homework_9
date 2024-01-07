@@ -86,7 +86,30 @@ def sort_file_by_extension():
                 os.replace(file, extension_folder)
 
 
+def get_size_folder():
+    path = os.getcwd()
+    files = os.listdir()
+
+    for folder_name in extensions.values():
+        if folder_name in files:
+            print(f"В папке '{folder_name}' находится "
+                  f"{len(os.listdir(os.path.join(folder_name)))} файлов"
+                  f"общим размером {os.stat(folder_name).st_size}.")
+
+
+def rename_test_in_hello():
+    path = os.getcwd()
+    file = os.path.join(path, 'text')
+    old_file_name = os.path.join(file, 'test.txt')
+    new_file_name = os.path.join(file, 'hello.txt')
+    if os.path.exists(old_file_name):
+        os.rename(old_file_name, new_file_name)
+        print("Файл 'test.txt' был переименован в 'hello.txt'")
+
+
 if __name__ == '__main__':
     print_os_name()
     print_path_to_current_directory()
     sort_file_by_extension()
+    get_size_folder()
+    rename_test_in_hello()
