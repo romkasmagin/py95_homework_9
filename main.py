@@ -1,4 +1,5 @@
 import os_module_operation
+import replace_fullname_to_n
 
 
 if __name__ == '__main__':
@@ -17,3 +18,6 @@ if __name__ == '__main__':
     os_module_operation.get_size_folder()
     os_module_operation.rename_test_in_hello()
     input('Первое задание отработало, для продолжение нажмите Enter...')
+    print('Второе задание заменит ФИО на N')
+    text = input('Введите текст судебного документа: ')
+    replace_fullname_to_n.replace_fullname_to_n(text)
