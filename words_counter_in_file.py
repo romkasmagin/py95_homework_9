@@ -30,4 +30,3 @@ def count_word_in_lines(line):
 
 def start_program():
     work_with_file(START_FILE, RESULT_FILE)
-
